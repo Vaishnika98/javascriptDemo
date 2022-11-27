@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body-dark {
+            background-color:black;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="toggleTheme" onclick="toggleTheme()">Change theam
+    <h1>
+        This is heading
+    </h1>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque optio officia culpa aperiam fuga quod fugiat dignissimos autem dolorem a ut quidem quo, eos repellendus exercitationem! Blanditiis laboriosam doloremque cupiditate.
+    </p>
+    
+    <script>
+        function toggleTheme(){
+            var theme=document.body;
+            theme.classList.toggle('body-dark');
+        }
+    </script>
+</body>
+</html>

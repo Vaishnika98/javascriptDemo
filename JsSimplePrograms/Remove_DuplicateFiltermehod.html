@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="color"></div>
+<body>
+    <script>
+        let arr = ["red", "pink","green", "blue", "pink", "red"];
+
+        function removeDuplicates(arr) {
+            return arr.filter((item,index) => arr.indexOf(item))
+        }
+
+        document.getElementById("color").innerHTML=(removeDuplicates(arr));
+    </script>
+</body>
+</html>

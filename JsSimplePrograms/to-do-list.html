@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f4cbfc3fea.js" crossorigin="anonymous"></script>
+    <style>
+        body {font-family:Arial, Helvetica, sans-serif; margin:0;}
+        section {margin:0 auto; width:300px; padding:50px 0;}
+        form {display:flex; padding:10px; background-color:white; border:1px solid grey;}
+        form input {flex-grow:1; border:0; outline:none;}
+        ul {list-style:none; margin:0; padding:0;}
+        li {padding:15px; background-color:antiquewhite; margin:2px 0; display:flex; justify-content:space-between;}
+        i {color:red; cursor: pointer;}
+        .d-none {display:none;}
+        .alert-danger {background-color:pink; border:1px solid red; color:brown; padding:10px; display:block; position:absolute; font-size:12px; border-radius:5px; right:10px; top:10px;}
+    </style>
+</head>
+<body>
+
+    <section>
+        <form action="">
+            <input type="text" id="inputbox">
+            <button>Add</button>
+        </form>
+        <ul>            
+        </ul>
+    </section>
+
+    <script>
+        let inputbox = document.querySelector('#inputbox');
+        let btn = document.querySelector('button');
+        let ul = document.querySelector('ul');
+
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+            if(inputbox.value != ""){
+                let li = document.createElement('li');
+                let icon = document.createElement('i');                
+                li.innerHTML = inputbox.value;                
+                icon.classList.add('fa-solid', 'fa-trash-can')
+                li.appendChild(icon)
+                ul.appendChild(li)                
+            }
+            else {
+                let alertBox = document.createElement('span');
+                alertBox.classList.add('alert-danger');
+                alertBox.innerHTML = 'Please add some text in input box';
+                document.body.prepend(alertBox)
+                setTimeout(() => {
+                    document.querySelector('.alert-danger').remove()
+                }, 3000);
+            }
+            let deleteBtn = document.querySelectorAll('li i')
+            for(i=0; i < deleteBtn.length; i++){
+                deleteBtn[i].addEventListener('click',function(){
+                    this.parentElement.classList.add('d-none')
+                })
+            }
+            inputbox.value = ''
+        })        
+    </script>
+</body>
+</html>

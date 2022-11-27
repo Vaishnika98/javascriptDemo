@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="num">
+    <button id="btn" type="submit" onclick="GetSum()">Sum</button>
+    
+    <h3>Data input</h3>
+    <span id="Data"></span>
+       
+    <h3>Sum Of The Data</h3>
+    <span id="TotalSum"></span>
+        
+    <script>
+        const array = [];
+        let sum=0;
+        function GetSum() {
+
+                let number = document.getElementById('num').value;
+                
+                let list = array.push(number);
+                let text = "";
+                array.forEach((item)=>{
+                    text += item + "<br/>";
+                });
+
+                document.getElementById('Data').innerHTML = text;
+                sum += parseInt(number);
+                document.getElementById('TotalSum').innerHTML = sum;
+            }
+
+    </script>
+</body>
+</html>

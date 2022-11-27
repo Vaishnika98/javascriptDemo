@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Shopping List</h1>
+
+    <!-- Example list (make it dynamic) -->
+    <ul id="name"></ul>
+    <!-- Example list -->
+
+
+    <script>
+        /* ask user to add item names (take these items and fill up array) */
+        /* a prompt will keep asking user to add item names */
+        /* prompt will stop asking for more items if user puts "NO" in prompt box */
+        /* update DOM ul list when user puts "NO" in prompt */
+
+        let shoppingList = [];
+        for(var i=0;i<100;i++)
+        {
+            let list=prompt('enter item name'+(i+1));
+            if(list=="no")
+            {
+                alert("stop");
+                break;
+            }
+            else{
+                shoppingList[i]=list;
+            }
+        }
+        document.getElementById('name').innerHTML= '<li>'+shoppingList.join('</li><li>')+'</li>';
+        
+    </script>
+</body>
+
+</html>

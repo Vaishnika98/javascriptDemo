@@ -1,0 +1,3 @@
+h4{position: relative;padding: 20px 0;}
+h4::after{position:absolute;border-bottom: 1px dashed black;top: 100%;content:"";width: 100%;left: 0;}
+body{margin-top: 100px;}
